@@ -6432,3 +6432,19 @@ This generated password is for development use only. Your security configuration
 2026-01-11 14:49:32.598 [32mINFO [m [tomcat-handler-0] [36mo.a.k.c.u.AppInfoParser[m : Kafka startTimeMs: 1768139372598
 2026-01-11 14:49:32.609 [32mINFO [m [kafka-producer-network-thread | producer-1] [36mo.a.k.c.Metadata[m : [Producer clientId=producer-1] Cluster ID: 5L6g3nShT-eMCtK--X86sw
 2026-01-11 14:49:32.721 [32mINFO [m [kafka-producer-network-thread | producer-1] [36mo.a.k.c.p.i.TransactionManager[m : [Producer clientId=producer-1] ProducerId set to 0 with epoch 0
+2026-01-11 14:52:38.323 [32mINFO [m [kafka-1] [36mo.a.k.c.c.i.ConsumerCoordinator[m : [Consumer clientId=consumer-payment-middleware-group-1, groupId=payment-middleware-group] Revoke previously assigned partitions payments-topic-0, payments-topic-1, payments-topic-2
+2026-01-11 14:52:38.325 [32mINFO [m [kafka-1] [36mo.a.k.c.c.i.ConsumerCoordinator[m : [Consumer clientId=consumer-payment-middleware-group-1, groupId=payment-middleware-group] Member consumer-payment-middleware-group-1-81b490a2-72b8-4784-be24-a90cf3bac95f sending LeaveGroup request to coordinator localhost:9092 (id: 2147483646 rack: null) due to the consumer unsubscribed from all topics
+2026-01-11 14:52:38.326 [32mINFO [m [kafka-1] [36mo.a.k.c.c.i.ConsumerCoordinator[m : [Consumer clientId=consumer-payment-middleware-group-1, groupId=payment-middleware-group] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-01-11 14:52:38.327 [32mINFO [m [kafka-1] [36mo.a.k.c.c.i.ConsumerCoordinator[m : [Consumer clientId=consumer-payment-middleware-group-1, groupId=payment-middleware-group] Request joining group due to: consumer pro-actively leaving the group
+2026-01-11 14:52:38.329 [32mINFO [m [kafka-1] [36mo.a.k.c.c.i.ConsumerCoordinator[m : [Consumer clientId=consumer-payment-middleware-group-1, groupId=payment-middleware-group] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-01-11 14:52:38.329 [32mINFO [m [kafka-1] [36mo.a.k.c.c.i.ConsumerCoordinator[m : [Consumer clientId=consumer-payment-middleware-group-1, groupId=payment-middleware-group] Request joining group due to: consumer pro-actively leaving the group
+2026-01-11 14:52:38.592 [32mINFO [m [kafka-1] [36mo.a.k.c.m.Metrics[m : Metrics scheduler closed
+2026-01-11 14:52:38.592 [32mINFO [m [kafka-1] [36mo.a.k.c.m.Metrics[m : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-01-11 14:52:38.593 [32mINFO [m [kafka-1] [36mo.a.k.c.m.Metrics[m : Metrics reporters closed
+2026-01-11 14:52:38.597 [32mINFO [m [kafka-1] [36mo.a.k.c.u.AppInfoParser[m : App info kafka.consumer for consumer-payment-middleware-group-1 unregistered
+2026-01-11 14:52:38.601 [32mINFO [m [RMI TCP Connection(11)-127.0.0.1] [36mo.a.c.h.Http11NioProtocol[m : Stopping ProtocolHandler ["http-nio-8081"]
+2026-01-11 14:52:38.605 [32mINFO [m [RMI TCP Connection(11)-127.0.0.1] [36mo.a.k.c.p.KafkaProducer[m : [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2026-01-11 14:52:38.608 [32mINFO [m [RMI TCP Connection(11)-127.0.0.1] [36mo.a.k.c.m.Metrics[m : Metrics scheduler closed
+2026-01-11 14:52:38.609 [32mINFO [m [RMI TCP Connection(11)-127.0.0.1] [36mo.a.k.c.m.Metrics[m : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-01-11 14:52:38.609 [32mINFO [m [RMI TCP Connection(11)-127.0.0.1] [36mo.a.k.c.m.Metrics[m : Metrics reporters closed
+2026-01-11 14:52:38.609 [32mINFO [m [RMI TCP Connection(11)-127.0.0.1] [36mo.a.k.c.u.AppInfoParser[m : App info kafka.producer for producer-1 unregistered
