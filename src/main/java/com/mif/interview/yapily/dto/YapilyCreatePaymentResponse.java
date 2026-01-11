@@ -1,15 +1,14 @@
 package com.mif.interview.yapily.dto;
 
-public class YapilyCreatePaymentAuthorizationResponse {
+public class YapilyCreatePaymentResponse {
 
   private YapilyResponseMeta meta;
-  private YapilyPaymentAuthorisationResponse data;
+  private YapilyPaymentResponse data;
 
-  public YapilyCreatePaymentAuthorizationResponse() {
+  public YapilyCreatePaymentResponse() {
   }
 
-  public YapilyCreatePaymentAuthorizationResponse(YapilyResponseMeta meta,
-      YapilyPaymentAuthorisationResponse data) {
+  public YapilyCreatePaymentResponse(YapilyResponseMeta meta, YapilyPaymentResponse data) {
     this.meta = meta;
     this.data = data;
   }
@@ -22,18 +21,18 @@ public class YapilyCreatePaymentAuthorizationResponse {
     this.meta = meta;
   }
 
-  public YapilyPaymentAuthorisationResponse getData() {
+  public YapilyPaymentResponse getData() {
     return data;
   }
 
-  public void setData(YapilyPaymentAuthorisationResponse data) {
+  public void setData(YapilyPaymentResponse data) {
     this.data = data;
   }
 
   @Override
   public String toString() {
     StringBuilder builder = new StringBuilder();
-    builder.append("YapilyCreatePaymentAuthorizationResponse [");
+    builder.append("YapilyCreatePaymentResponse [");
     if (meta != null) {
       builder.append("meta=");
       builder.append(meta);

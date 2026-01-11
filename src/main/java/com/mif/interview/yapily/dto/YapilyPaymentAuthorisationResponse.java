@@ -1,6 +1,6 @@
 package com.mif.interview.yapily.dto;
 
-public class YapilyPaymentAuthorisationRequestResponse {
+public class YapilyPaymentAuthorisationResponse {
 
   private String id;
   private String userUuid;
@@ -15,10 +15,10 @@ public class YapilyPaymentAuthorisationRequestResponse {
   private String state;
   private String explanation;
 
-  public YapilyPaymentAuthorisationRequestResponse() {
+  public YapilyPaymentAuthorisationResponse() {
   }
 
-  public YapilyPaymentAuthorisationRequestResponse(String id, String userUuid, String status, String createdAt,
+  public YapilyPaymentAuthorisationResponse(String id, String userUuid, String status, String createdAt,
       String transactionFrom, String transactionTo, String expiresAt, String timeToExpire, String fetureScope,
       String consentToken, String state, String explanation) {
     super();
