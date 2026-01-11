@@ -2,8 +2,6 @@ package com.mif.interview.yapily.service;
 
 import java.net.URI;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -28,7 +26,6 @@ import jakarta.validation.constraints.NotBlank;
 @Service
 public class YapilyHttpService {
 
-  private static final Logger logger = LogManager.getLogger(YapilyHttpService.class);
   //TODO: move to application.yml
   private static final URI YAPILY_HOST = URI.create("https://api.yapily.com");
 

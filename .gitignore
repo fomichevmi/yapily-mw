@@ -7,6 +7,7 @@ gradlew.bat
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
+logs/
 
 ### STS ###
 .apt_generated
