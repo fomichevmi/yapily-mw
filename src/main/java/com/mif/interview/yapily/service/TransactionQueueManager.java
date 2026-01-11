@@ -25,6 +25,9 @@ public class TransactionQueueManager {
 
   @Autowired
   TransactionStorage transactionStorage;
+  
+  @Autowired
+  BusinessLogicService businessLogicService;
 
   public void sendPayment(@NotBlank String idempotencyKey, @Valid Transaction request) {
     // We use the idempotencyKey as the Kafka Message Key.
@@ -44,5 +47,6 @@ public class TransactionQueueManager {
   @KafkaListener(topics = "payments-topic", groupId = "payment-middleware-group")
   public void consume(Transaction transaction) {
     logger.debug("Processing payment for key: {}, amount: {}", transaction.getTransactionId(), transaction.getAmount());
+    businessLogicService.processPayment(transaction);
   }
 }

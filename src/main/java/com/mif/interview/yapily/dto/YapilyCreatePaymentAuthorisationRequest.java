@@ -22,7 +22,6 @@ public class YapilyCreatePaymentAuthorisationRequest {
 
   public YapilyCreatePaymentAuthorisationRequest(@NotBlank String institutionId,
       @NotNull YapilyCreatePaymentRequest paymentRequest) {
-    super();
     this.institutionId = institutionId;
     this.paymentRequest = paymentRequest;
   }

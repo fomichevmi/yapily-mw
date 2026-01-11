@@ -183,7 +183,7 @@ public class YapilyPaymentAuthorisationResponse {
     }
     if (consentToken != null) {
       builder.append("consentToken=");
-      builder.append(consentToken);
+      builder.append("**************");
       builder.append(", ");
     }
     if (state != null) {

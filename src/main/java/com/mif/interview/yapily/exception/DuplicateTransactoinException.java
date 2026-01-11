@@ -12,6 +12,7 @@ public class DuplicateTransactoinException extends RuntimeException {
     this.status = status;
   }
 
+  @Override
   public String getMessage() {
     return new StringBuilder().append("The transaction is already ").append(status.name().replaceAll("_", ""))
         .toString();
