@@ -5,6 +5,8 @@ import jakarta.validation.constraints.NotNull;
 
 public class YapilyCreatePaymentAuthorisationRequest {
 
+  @NotBlank
+  private String applicationUserId;
   /**
    * The reference to the Institution which identifies which institution the
    * authorisation request is sent to.
@@ -20,8 +22,9 @@ public class YapilyCreatePaymentAuthorisationRequest {
   public YapilyCreatePaymentAuthorisationRequest() {
   }
 
-  public YapilyCreatePaymentAuthorisationRequest(@NotBlank String institutionId,
+  public YapilyCreatePaymentAuthorisationRequest(@NotBlank String applicationUserId, @NotBlank String institutionId,
       @NotNull YapilyCreatePaymentRequest paymentRequest) {
+    this.applicationUserId = applicationUserId;
     this.institutionId = institutionId;
     this.paymentRequest = paymentRequest;
   }
@@ -42,10 +45,23 @@ public class YapilyCreatePaymentAuthorisationRequest {
     this.paymentRequest = paymentRequest;
   }
 
+  public String getApplicationUserId() {
+    return applicationUserId;
+  }
+
+  public void setApplicationUserId(String applicationUserId) {
+    this.applicationUserId = applicationUserId;
+  }
+
   @Override
   public String toString() {
     StringBuilder builder = new StringBuilder();
     builder.append("YapilyCreatePaymentAuthorisationRequest [");
+    if (applicationUserId != null) {
+      builder.append("applicationUserId=");
+      builder.append(applicationUserId);
+      builder.append(", ");
+    }
     if (institutionId != null) {
       builder.append("institutionId=");
       builder.append(institutionId);

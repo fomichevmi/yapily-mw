@@ -20,6 +20,7 @@ import com.mif.interview.yapily.dto.YapilyCreatePaymentAuthorisationRequest;
 import com.mif.interview.yapily.dto.YapilyCreatePaymentAuthorizationResponse;
 import com.mif.interview.yapily.dto.YapilyCreatePaymentRequest;
 import com.mif.interview.yapily.dto.YapilyCreatePaymentResponse;
+import com.mif.interview.yapily.dto.YapilyGetConsentResponse;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
@@ -28,6 +29,7 @@ import jakarta.validation.constraints.NotBlank;
 public class YapilyHttpService {
 
   private static final Logger logger = LogManager.getLogger(YapilyHttpService.class);
+  //TODO: move to application.yml
   private static final URI YAPILY_HOST = URI.create("https://api.yapily.com");
 
   @Autowired
@@ -37,11 +39,24 @@ public class YapilyHttpService {
       HttpServerErrorException.class }, maxAttempts = 3, backoff = @Backoff(delay = 1000, multiplier = 2.0))
   public YapilyCreatePaymentAuthorizationResponse getPaymentAuthorization(
       @Valid YapilyCreatePaymentAuthorisationRequest request) {
+    HttpHeaders headers = new HttpHeaders();
+    headers.setContentType(MediaType.APPLICATION_JSON);
+
     var uri = UriComponentsBuilder.fromUri(YAPILY_HOST).path("/payment-auth-requests").build().toUri();
-    var response = restTemplate.postForEntity(uri, request, YapilyCreatePaymentAuthorizationResponse.class);
+    HttpEntity<YapilyCreatePaymentAuthorisationRequest> entity = new HttpEntity<>(request, headers);
+ 
+    var response = restTemplate.postForEntity(uri, entity, YapilyCreatePaymentAuthorizationResponse.class);
     return response.getBody();
   }
 
+  @Retryable(retryFor = { ResourceAccessException.class,
+      HttpServerErrorException.class }, maxAttempts = 3, backoff = @Backoff(delay = 1000, multiplier = 2.0))
+  public YapilyGetConsentResponse getConsentToken(String consentId) {
+    var uri = UriComponentsBuilder.fromUri(YAPILY_HOST).path("/consents/{consentId}").buildAndExpand(consentId).toUri();
+    var response = restTemplate.getForEntity(uri, YapilyGetConsentResponse.class);
+    return response.getBody();
+  }
+  
   @Retryable(retryFor = { ResourceAccessException.class,
       HttpServerErrorException.class }, maxAttempts = 3, backoff = @Backoff(delay = 1000, multiplier = 2.0))
   public YapilyCreatePaymentResponse processPayment(@NotBlank String consentToken,
@@ -55,7 +70,6 @@ public class YapilyHttpService {
     HttpEntity<YapilyCreatePaymentRequest> entity = new HttpEntity<>(request, headers);
 
     var response = restTemplate.postForEntity(uri, entity, YapilyCreatePaymentResponse.class);
-
     return response.getBody();
   }
 

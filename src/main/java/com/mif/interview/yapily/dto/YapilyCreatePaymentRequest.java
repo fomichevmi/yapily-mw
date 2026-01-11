@@ -168,5 +168,51 @@ public class YapilyCreatePaymentRequest {
     return Objects.equals(paymentIdempotencyId, other.paymentIdempotencyId);
   }
 
-  
+  @Override
+  public String toString() {
+    StringBuilder builder = new StringBuilder();
+    builder.append("YapilyCreatePaymentRequest [");
+    if (paymentIdempotencyId != null) {
+      builder.append("paymentIdempotencyId=");
+      builder.append(paymentIdempotencyId);
+      builder.append(", ");
+    }
+    if (payer != null) {
+      builder.append("payer=");
+      builder.append(payer);
+      builder.append(", ");
+    }
+    if (reference != null) {
+      builder.append("reference=");
+      builder.append(reference);
+      builder.append(", ");
+    }
+    if (contextType != null) {
+      builder.append("contextType=");
+      builder.append(contextType);
+      builder.append(", ");
+    }
+    if (purposeCode != null) {
+      builder.append("purposeCode=");
+      builder.append(purposeCode);
+      builder.append(", ");
+    }
+    if (type != null) {
+      builder.append("type=");
+      builder.append(type);
+      builder.append(", ");
+    }
+    if (payee != null) {
+      builder.append("payee=");
+      builder.append(payee);
+      builder.append(", ");
+    }
+    if (amount != null) {
+      builder.append("amount=");
+      builder.append(amount);
+    }
+    builder.append("]");
+    return builder.toString();
+  }
+
 }

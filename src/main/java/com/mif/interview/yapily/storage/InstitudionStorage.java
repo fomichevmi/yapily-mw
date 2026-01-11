@@ -17,9 +17,9 @@ public class InstitudionStorage {
 
   @PostConstruct
   void init() {
-    institutions.add("unicaja-sandbox");
-    institutions.add("santander-sandbox");
-    institutions.add("bbva-sandbox");
+    //institutions.add("unicaja-sandbox");
+    //institutions.add("santander-sandbox");
+    //institutions.add("bbva-sandbox");
     institutions.add("modelo-sandbox");
   }
 

@@ -11,7 +11,7 @@ public class YapilyPaymentAuthorisationResponse {
   private String expiresAt;
   private String timeToExpire;
   private String fetureScope;
-  private String consentToken;
+  private String institutionConsentId;
   private String state;
   private String explanation;
 
@@ -20,8 +20,7 @@ public class YapilyPaymentAuthorisationResponse {
 
   public YapilyPaymentAuthorisationResponse(String id, String userUuid, String status, String createdAt,
       String transactionFrom, String transactionTo, String expiresAt, String timeToExpire, String fetureScope,
-      String consentToken, String state, String explanation) {
-    super();
+      String institutionConsentId, String state, String explanation) {
     this.id = id;
     this.userUuid = userUuid;
     this.status = status;
@@ -31,7 +30,7 @@ public class YapilyPaymentAuthorisationResponse {
     this.expiresAt = expiresAt;
     this.timeToExpire = timeToExpire;
     this.fetureScope = fetureScope;
-    this.consentToken = consentToken;
+    this.institutionConsentId = institutionConsentId;
     this.state = state;
     this.explanation = explanation;
   }
@@ -108,12 +107,12 @@ public class YapilyPaymentAuthorisationResponse {
     this.fetureScope = fetureScope;
   }
 
-  public String getConsentToken() {
-    return consentToken;
+  public String getInstitutionConsentId() {
+    return institutionConsentId;
   }
 
-  public void setConsentToken(String consentToken) {
-    this.consentToken = consentToken;
+  public void setInstitutionConsentId(String institutionConsentId) {
+    this.institutionConsentId = institutionConsentId;
   }
 
   public String getState() {
@@ -181,9 +180,9 @@ public class YapilyPaymentAuthorisationResponse {
       builder.append(fetureScope);
       builder.append(", ");
     }
-    if (consentToken != null) {
-      builder.append("consentToken=");
-      builder.append("**************");
+    if (institutionConsentId != null) {
+      builder.append("institutionConsentId=");
+      builder.append(institutionConsentId);
       builder.append(", ");
     }
     if (state != null) {
