@@ -78,3 +78,10 @@ The middleware implements a Token Bucket algorithm to stay within Yapily’s API
     Refill Rate: 10 tokens/second
 
     Behavior: Requests arriving when the bucket is empty receive an immediate 429 Too Many Requests response, preventing downstream congestion.
+
+Insert application secret into hashicorp vault
+
+```
+jq -r '[.applicationUuid, .secret] | @tsv' ~/Documents/yapily_app_secret.json | \
+xargs -I {} sh -c 'docker exec -e VAULT_TOKEN="root-token" vault vault kv put secret/yapily-middleware apiKey=$(echo {} | cut -f1) apiSecret=$(echo {} | cut -f2)'
+```

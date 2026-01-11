@@ -1,6 +1,8 @@
 spring:
   application:
     name: yapily
+  config:
+    import: "vault://"
   threads:
     virtual:
       enabled: true

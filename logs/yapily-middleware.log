@@ -6448,3 +6448,472 @@ This generated password is for development use only. Your security configuration
 2026-01-11 14:52:38.609 [32mINFO [m [RMI TCP Connection(11)-127.0.0.1] [36mo.a.k.c.m.Metrics[m : Closing reporter org.apache.kafka.common.metrics.JmxReporter
 2026-01-11 14:52:38.609 [32mINFO [m [RMI TCP Connection(11)-127.0.0.1] [36mo.a.k.c.m.Metrics[m : Metrics reporters closed
 2026-01-11 14:52:38.609 [32mINFO [m [RMI TCP Connection(11)-127.0.0.1] [36mo.a.k.c.u.AppInfoParser[m : App info kafka.producer for producer-1 unregistered
+2026-01-11 17:43:28.435 [32mINFO [m [background-preinit] [36mo.h.v.i.u.Version[m : HV000001: Hibernate Validator 8.0.1.Final
+2026-01-11 17:43:29.670 [32mINFO [m [main] [36mo.a.c.h.Http11NioProtocol[m : Initializing ProtocolHandler ["http-nio-8081"]
+2026-01-11 17:43:29.673 [32mINFO [m [main] [36mo.a.c.c.StandardService[m : Starting service [Tomcat]
+2026-01-11 17:43:29.673 [32mINFO [m [main] [36mo.a.c.c.StandardEngine[m : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2026-01-11 17:43:29.721 [32mINFO [m [main] [36mo.a.c.c.C.[.[.[/][m : Initializing Spring embedded WebApplicationContext
+2026-01-11 17:43:30.183 [33mWARN [m [main] [36mo.s.b.a.s.s.UserDetailsServiceAutoConfiguration[m : 
+
+Using generated security password: 7e64f427-4c51-4181-b74f-1cad0e1f8d31
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-01-11 17:43:30.768 [32mINFO [m [main] [36mo.a.k.c.a.AdminClientConfig[m : AdminClientConfig values: 
+	auto.include.jmx.reporter = true
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2026-01-11 17:43:30.834 [32mINFO [m [main] [36mo.a.k.c.u.AppInfoParser[m : Kafka version: 3.6.1
+2026-01-11 17:43:30.834 [32mINFO [m [main] [36mo.a.k.c.u.AppInfoParser[m : Kafka commitId: 5e3c2b738d253ff5
+2026-01-11 17:43:30.834 [32mINFO [m [main] [36mo.a.k.c.u.AppInfoParser[m : Kafka startTimeMs: 1768149810831
+2026-01-11 17:43:31.131 [32mINFO [m [kafka-admin-client-thread | adminclient-1] [36mo.a.k.c.u.AppInfoParser[m : App info kafka.admin.client for adminclient-1 unregistered
+2026-01-11 17:43:31.136 [32mINFO [m [kafka-admin-client-thread | adminclient-1] [36mo.a.k.c.m.Metrics[m : Metrics scheduler closed
+2026-01-11 17:43:31.137 [32mINFO [m [kafka-admin-client-thread | adminclient-1] [36mo.a.k.c.m.Metrics[m : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-01-11 17:43:31.137 [32mINFO [m [kafka-admin-client-thread | adminclient-1] [36mo.a.k.c.m.Metrics[m : Metrics reporters closed
+2026-01-11 17:43:31.144 [32mINFO [m [main] [36mo.a.c.h.Http11NioProtocol[m : Starting ProtocolHandler ["http-nio-8081"]
+2026-01-11 17:43:31.196 [32mINFO [m [main] [36mo.a.k.c.c.ConsumerConfig[m : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-payment-middleware-group-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = payment-middleware-group
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2026-01-11 17:43:31.239 [32mINFO [m [main] [36mo.a.k.c.u.AppInfoParser[m : Kafka version: 3.6.1
+2026-01-11 17:43:31.240 [32mINFO [m [main] [36mo.a.k.c.u.AppInfoParser[m : Kafka commitId: 5e3c2b738d253ff5
+2026-01-11 17:43:31.240 [32mINFO [m [main] [36mo.a.k.c.u.AppInfoParser[m : Kafka startTimeMs: 1768149811239
+2026-01-11 17:43:31.271 [32mINFO [m [kafka-1] [36mo.a.k.c.Metadata[m : [Consumer clientId=consumer-payment-middleware-group-1, groupId=payment-middleware-group] Cluster ID: 5L6g3nShT-eMCtK--X86sw
+2026-01-11 17:43:31.272 [32mINFO [m [kafka-1] [36mo.a.k.c.c.i.ConsumerCoordinator[m : [Consumer clientId=consumer-payment-middleware-group-1, groupId=payment-middleware-group] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-01-11 17:43:31.275 [32mINFO [m [kafka-1] [36mo.a.k.c.c.i.ConsumerCoordinator[m : [Consumer clientId=consumer-payment-middleware-group-1, groupId=payment-middleware-group] (Re-)joining group
+2026-01-11 17:43:31.290 [32mINFO [m [kafka-1] [36mo.a.k.c.c.i.ConsumerCoordinator[m : [Consumer clientId=consumer-payment-middleware-group-1, groupId=payment-middleware-group] Request joining group due to: need to re-join with the given member-id: consumer-payment-middleware-group-1-3c5beaf1-5959-4d16-b53f-430549c361ff
+2026-01-11 17:43:31.291 [32mINFO [m [kafka-1] [36mo.a.k.c.c.i.ConsumerCoordinator[m : [Consumer clientId=consumer-payment-middleware-group-1, groupId=payment-middleware-group] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2026-01-11 17:43:31.291 [32mINFO [m [kafka-1] [36mo.a.k.c.c.i.ConsumerCoordinator[m : [Consumer clientId=consumer-payment-middleware-group-1, groupId=payment-middleware-group] (Re-)joining group
+2026-01-11 17:43:31.294 [32mINFO [m [kafka-1] [36mo.a.k.c.c.i.ConsumerCoordinator[m : [Consumer clientId=consumer-payment-middleware-group-1, groupId=payment-middleware-group] Successfully joined group with generation Generation{generationId=11, memberId='consumer-payment-middleware-group-1-3c5beaf1-5959-4d16-b53f-430549c361ff', protocol='range'}
+2026-01-11 17:43:31.302 [32mINFO [m [kafka-1] [36mo.a.k.c.c.i.ConsumerCoordinator[m : [Consumer clientId=consumer-payment-middleware-group-1, groupId=payment-middleware-group] Finished assignment for group at generation 11: {consumer-payment-middleware-group-1-3c5beaf1-5959-4d16-b53f-430549c361ff=Assignment(partitions=[payments-topic-0, payments-topic-1, payments-topic-2])}
+2026-01-11 17:43:31.315 [32mINFO [m [kafka-1] [36mo.a.k.c.c.i.ConsumerCoordinator[m : [Consumer clientId=consumer-payment-middleware-group-1, groupId=payment-middleware-group] Successfully synced group in generation Generation{generationId=11, memberId='consumer-payment-middleware-group-1-3c5beaf1-5959-4d16-b53f-430549c361ff', protocol='range'}
+2026-01-11 17:43:31.315 [32mINFO [m [kafka-1] [36mo.a.k.c.c.i.ConsumerCoordinator[m : [Consumer clientId=consumer-payment-middleware-group-1, groupId=payment-middleware-group] Notifying assignor about the new Assignment(partitions=[payments-topic-0, payments-topic-1, payments-topic-2])
+2026-01-11 17:43:31.319 [32mINFO [m [kafka-1] [36mo.a.k.c.c.i.ConsumerCoordinator[m : [Consumer clientId=consumer-payment-middleware-group-1, groupId=payment-middleware-group] Adding newly assigned partitions: payments-topic-0, payments-topic-1, payments-topic-2
+2026-01-11 17:43:31.329 [32mINFO [m [kafka-1] [36mo.a.k.c.c.i.ConsumerCoordinator[m : [Consumer clientId=consumer-payment-middleware-group-1, groupId=payment-middleware-group] Found no committed offset for partition payments-topic-2
+2026-01-11 17:43:31.330 [32mINFO [m [kafka-1] [36mo.a.k.c.c.i.ConsumerCoordinator[m : [Consumer clientId=consumer-payment-middleware-group-1, groupId=payment-middleware-group] Found no committed offset for partition payments-topic-1
+2026-01-11 17:43:31.332 [32mINFO [m [kafka-1] [36mo.a.k.c.c.i.ConsumerCoordinator[m : [Consumer clientId=consumer-payment-middleware-group-1, groupId=payment-middleware-group] Setting offset for partition payments-topic-0 to the committed offset FetchPosition{offset=1, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=0}}
+2026-01-11 17:43:31.342 [32mINFO [m [kafka-1] [36mo.a.k.c.c.i.SubscriptionState[m : [Consumer clientId=consumer-payment-middleware-group-1, groupId=payment-middleware-group] Resetting offset for partition payments-topic-2 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=0}}.
+2026-01-11 17:43:31.342 [32mINFO [m [kafka-1] [36mo.a.k.c.c.i.SubscriptionState[m : [Consumer clientId=consumer-payment-middleware-group-1, groupId=payment-middleware-group] Resetting offset for partition payments-topic-1 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=0}}.
+2026-01-11 17:43:35.716 [32mINFO [m [kafka-1] [36mo.a.k.c.c.i.ConsumerCoordinator[m : [Consumer clientId=consumer-payment-middleware-group-1, groupId=payment-middleware-group] Revoke previously assigned partitions payments-topic-0, payments-topic-1, payments-topic-2
+2026-01-11 17:43:35.717 [32mINFO [m [kafka-1] [36mo.a.k.c.c.i.ConsumerCoordinator[m : [Consumer clientId=consumer-payment-middleware-group-1, groupId=payment-middleware-group] Member consumer-payment-middleware-group-1-3c5beaf1-5959-4d16-b53f-430549c361ff sending LeaveGroup request to coordinator localhost:9092 (id: 2147483646 rack: null) due to the consumer unsubscribed from all topics
+2026-01-11 17:43:35.719 [32mINFO [m [kafka-1] [36mo.a.k.c.c.i.ConsumerCoordinator[m : [Consumer clientId=consumer-payment-middleware-group-1, groupId=payment-middleware-group] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-01-11 17:43:35.719 [32mINFO [m [kafka-1] [36mo.a.k.c.c.i.ConsumerCoordinator[m : [Consumer clientId=consumer-payment-middleware-group-1, groupId=payment-middleware-group] Request joining group due to: consumer pro-actively leaving the group
+2026-01-11 17:43:35.723 [32mINFO [m [kafka-1] [36mo.a.k.c.c.i.ConsumerCoordinator[m : [Consumer clientId=consumer-payment-middleware-group-1, groupId=payment-middleware-group] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-01-11 17:43:35.723 [32mINFO [m [kafka-1] [36mo.a.k.c.c.i.ConsumerCoordinator[m : [Consumer clientId=consumer-payment-middleware-group-1, groupId=payment-middleware-group] Request joining group due to: consumer pro-actively leaving the group
+2026-01-11 17:43:35.903 [32mINFO [m [kafka-1] [36mo.a.k.c.m.Metrics[m : Metrics scheduler closed
+2026-01-11 17:43:35.904 [32mINFO [m [kafka-1] [36mo.a.k.c.m.Metrics[m : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-01-11 17:43:35.904 [32mINFO [m [kafka-1] [36mo.a.k.c.m.Metrics[m : Metrics reporters closed
+2026-01-11 17:43:35.908 [32mINFO [m [kafka-1] [36mo.a.k.c.u.AppInfoParser[m : App info kafka.consumer for consumer-payment-middleware-group-1 unregistered
+2026-01-11 17:43:35.911 [32mINFO [m [RMI TCP Connection(2)-127.0.0.1] [36mo.a.c.h.Http11NioProtocol[m : Stopping ProtocolHandler ["http-nio-8081"]
+2026-01-11 18:28:06.919 [32mINFO [m [background-preinit] [36mo.h.v.i.u.Version[m : HV000001: Hibernate Validator 8.0.1.Final
+2026-01-11 18:28:08.151 [32mINFO [m [main] [36mo.a.c.h.Http11NioProtocol[m : Initializing ProtocolHandler ["http-nio-8081"]
+2026-01-11 18:28:08.154 [32mINFO [m [main] [36mo.a.c.c.StandardService[m : Starting service [Tomcat]
+2026-01-11 18:28:08.154 [32mINFO [m [main] [36mo.a.c.c.StandardEngine[m : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2026-01-11 18:28:08.220 [32mINFO [m [main] [36mo.a.c.c.C.[.[.[/][m : Initializing Spring embedded WebApplicationContext
+2026-01-11 18:28:08.305 [33mWARN [m [main] [36mo.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext[m : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'restClientConfig': Injection of autowired dependencies failed
+2026-01-11 18:28:08.308 [32mINFO [m [main] [36mo.a.c.c.StandardService[m : Stopping service [Tomcat]
+2026-01-11 18:28:08.343 [1;31mERROR[m [main] [36mo.s.b.SpringApplication[m : Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'restClientConfig': Injection of autowired dependencies failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:514)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1419)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at com.mif.interview.yapily.YapilyApplication.main(YapilyApplication.java:17)
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'apiKey' in value "${apiKey}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:180)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:126)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:239)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:200)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:922)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1374)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:784)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:767)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:508)
+	... 17 more
+2026-01-11 18:29:11.508 [32mINFO [m [background-preinit] [36mo.h.v.i.u.Version[m : HV000001: Hibernate Validator 8.0.1.Final
+2026-01-11 18:29:12.680 [32mINFO [m [main] [36mo.a.c.h.Http11NioProtocol[m : Initializing ProtocolHandler ["http-nio-8081"]
+2026-01-11 18:29:12.682 [32mINFO [m [main] [36mo.a.c.c.StandardService[m : Starting service [Tomcat]
+2026-01-11 18:29:12.683 [32mINFO [m [main] [36mo.a.c.c.StandardEngine[m : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2026-01-11 18:29:12.729 [32mINFO [m [main] [36mo.a.c.c.C.[.[.[/][m : Initializing Spring embedded WebApplicationContext
+2026-01-11 18:29:12.970 [33mWARN [m [main] [36mo.s.b.a.s.s.UserDetailsServiceAutoConfiguration[m : 
+
+Using generated security password: a6db3d12-c47a-4909-b530-2284af626c6c
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-01-11 18:29:13.508 [32mINFO [m [main] [36mo.a.k.c.a.AdminClientConfig[m : AdminClientConfig values: 
+	auto.include.jmx.reporter = true
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2026-01-11 18:29:13.566 [32mINFO [m [main] [36mo.a.k.c.u.AppInfoParser[m : Kafka version: 3.6.1
+2026-01-11 18:29:13.567 [32mINFO [m [main] [36mo.a.k.c.u.AppInfoParser[m : Kafka commitId: 5e3c2b738d253ff5
+2026-01-11 18:29:13.567 [32mINFO [m [main] [36mo.a.k.c.u.AppInfoParser[m : Kafka startTimeMs: 1768152553564
+2026-01-11 18:29:13.853 [32mINFO [m [kafka-admin-client-thread | adminclient-1] [36mo.a.k.c.u.AppInfoParser[m : App info kafka.admin.client for adminclient-1 unregistered
+2026-01-11 18:29:13.859 [32mINFO [m [kafka-admin-client-thread | adminclient-1] [36mo.a.k.c.m.Metrics[m : Metrics scheduler closed
+2026-01-11 18:29:13.859 [32mINFO [m [kafka-admin-client-thread | adminclient-1] [36mo.a.k.c.m.Metrics[m : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-01-11 18:29:13.859 [32mINFO [m [kafka-admin-client-thread | adminclient-1] [36mo.a.k.c.m.Metrics[m : Metrics reporters closed
+2026-01-11 18:29:13.865 [32mINFO [m [main] [36mo.a.c.h.Http11NioProtocol[m : Starting ProtocolHandler ["http-nio-8081"]
+2026-01-11 18:29:13.920 [32mINFO [m [main] [36mo.a.k.c.c.ConsumerConfig[m : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-payment-middleware-group-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = payment-middleware-group
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2026-01-11 18:29:13.964 [32mINFO [m [main] [36mo.a.k.c.u.AppInfoParser[m : Kafka version: 3.6.1
+2026-01-11 18:29:13.964 [32mINFO [m [main] [36mo.a.k.c.u.AppInfoParser[m : Kafka commitId: 5e3c2b738d253ff5
+2026-01-11 18:29:13.964 [32mINFO [m [main] [36mo.a.k.c.u.AppInfoParser[m : Kafka startTimeMs: 1768152553964
+2026-01-11 18:29:13.999 [32mINFO [m [kafka-1] [36mo.a.k.c.Metadata[m : [Consumer clientId=consumer-payment-middleware-group-1, groupId=payment-middleware-group] Cluster ID: 5L6g3nShT-eMCtK--X86sw
+2026-01-11 18:29:14.000 [32mINFO [m [kafka-1] [36mo.a.k.c.c.i.ConsumerCoordinator[m : [Consumer clientId=consumer-payment-middleware-group-1, groupId=payment-middleware-group] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-01-11 18:29:14.003 [32mINFO [m [kafka-1] [36mo.a.k.c.c.i.ConsumerCoordinator[m : [Consumer clientId=consumer-payment-middleware-group-1, groupId=payment-middleware-group] (Re-)joining group
+2026-01-11 18:29:14.018 [32mINFO [m [kafka-1] [36mo.a.k.c.c.i.ConsumerCoordinator[m : [Consumer clientId=consumer-payment-middleware-group-1, groupId=payment-middleware-group] Request joining group due to: need to re-join with the given member-id: consumer-payment-middleware-group-1-060857ce-e61c-4641-8649-80ae6e389600
+2026-01-11 18:29:14.019 [32mINFO [m [kafka-1] [36mo.a.k.c.c.i.ConsumerCoordinator[m : [Consumer clientId=consumer-payment-middleware-group-1, groupId=payment-middleware-group] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2026-01-11 18:29:14.019 [32mINFO [m [kafka-1] [36mo.a.k.c.c.i.ConsumerCoordinator[m : [Consumer clientId=consumer-payment-middleware-group-1, groupId=payment-middleware-group] (Re-)joining group
+2026-01-11 18:29:14.022 [32mINFO [m [kafka-1] [36mo.a.k.c.c.i.ConsumerCoordinator[m : [Consumer clientId=consumer-payment-middleware-group-1, groupId=payment-middleware-group] Successfully joined group with generation Generation{generationId=13, memberId='consumer-payment-middleware-group-1-060857ce-e61c-4641-8649-80ae6e389600', protocol='range'}
+2026-01-11 18:29:14.035 [32mINFO [m [kafka-1] [36mo.a.k.c.c.i.ConsumerCoordinator[m : [Consumer clientId=consumer-payment-middleware-group-1, groupId=payment-middleware-group] Finished assignment for group at generation 13: {consumer-payment-middleware-group-1-060857ce-e61c-4641-8649-80ae6e389600=Assignment(partitions=[payments-topic-0, payments-topic-1, payments-topic-2])}
+2026-01-11 18:29:14.046 [32mINFO [m [kafka-1] [36mo.a.k.c.c.i.ConsumerCoordinator[m : [Consumer clientId=consumer-payment-middleware-group-1, groupId=payment-middleware-group] Successfully synced group in generation Generation{generationId=13, memberId='consumer-payment-middleware-group-1-060857ce-e61c-4641-8649-80ae6e389600', protocol='range'}
+2026-01-11 18:29:14.047 [32mINFO [m [kafka-1] [36mo.a.k.c.c.i.ConsumerCoordinator[m : [Consumer clientId=consumer-payment-middleware-group-1, groupId=payment-middleware-group] Notifying assignor about the new Assignment(partitions=[payments-topic-0, payments-topic-1, payments-topic-2])
+2026-01-11 18:29:14.050 [32mINFO [m [kafka-1] [36mo.a.k.c.c.i.ConsumerCoordinator[m : [Consumer clientId=consumer-payment-middleware-group-1, groupId=payment-middleware-group] Adding newly assigned partitions: payments-topic-0, payments-topic-1, payments-topic-2
+2026-01-11 18:29:14.058 [32mINFO [m [kafka-1] [36mo.a.k.c.c.i.ConsumerCoordinator[m : [Consumer clientId=consumer-payment-middleware-group-1, groupId=payment-middleware-group] Found no committed offset for partition payments-topic-2
+2026-01-11 18:29:14.059 [32mINFO [m [kafka-1] [36mo.a.k.c.c.i.ConsumerCoordinator[m : [Consumer clientId=consumer-payment-middleware-group-1, groupId=payment-middleware-group] Found no committed offset for partition payments-topic-1
+2026-01-11 18:29:14.061 [32mINFO [m [kafka-1] [36mo.a.k.c.c.i.ConsumerCoordinator[m : [Consumer clientId=consumer-payment-middleware-group-1, groupId=payment-middleware-group] Setting offset for partition payments-topic-0 to the committed offset FetchPosition{offset=1, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=0}}
+2026-01-11 18:29:14.071 [32mINFO [m [kafka-1] [36mo.a.k.c.c.i.SubscriptionState[m : [Consumer clientId=consumer-payment-middleware-group-1, groupId=payment-middleware-group] Resetting offset for partition payments-topic-2 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=0}}.
+2026-01-11 18:29:14.071 [32mINFO [m [kafka-1] [36mo.a.k.c.c.i.SubscriptionState[m : [Consumer clientId=consumer-payment-middleware-group-1, groupId=payment-middleware-group] Resetting offset for partition payments-topic-1 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=0}}.
+2026-01-11 18:29:54.658 [32mINFO [m [kafka-1] [36mo.a.k.c.c.i.ConsumerCoordinator[m : [Consumer clientId=consumer-payment-middleware-group-1, groupId=payment-middleware-group] Revoke previously assigned partitions payments-topic-0, payments-topic-1, payments-topic-2
+2026-01-11 18:29:54.659 [32mINFO [m [kafka-1] [36mo.a.k.c.c.i.ConsumerCoordinator[m : [Consumer clientId=consumer-payment-middleware-group-1, groupId=payment-middleware-group] Member consumer-payment-middleware-group-1-060857ce-e61c-4641-8649-80ae6e389600 sending LeaveGroup request to coordinator localhost:9092 (id: 2147483646 rack: null) due to the consumer unsubscribed from all topics
+2026-01-11 18:29:54.660 [32mINFO [m [kafka-1] [36mo.a.k.c.c.i.ConsumerCoordinator[m : [Consumer clientId=consumer-payment-middleware-group-1, groupId=payment-middleware-group] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-01-11 18:29:54.660 [32mINFO [m [kafka-1] [36mo.a.k.c.c.i.ConsumerCoordinator[m : [Consumer clientId=consumer-payment-middleware-group-1, groupId=payment-middleware-group] Request joining group due to: consumer pro-actively leaving the group
+2026-01-11 18:29:54.662 [32mINFO [m [kafka-1] [36mo.a.k.c.c.i.ConsumerCoordinator[m : [Consumer clientId=consumer-payment-middleware-group-1, groupId=payment-middleware-group] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-01-11 18:29:54.662 [32mINFO [m [kafka-1] [36mo.a.k.c.c.i.ConsumerCoordinator[m : [Consumer clientId=consumer-payment-middleware-group-1, groupId=payment-middleware-group] Request joining group due to: consumer pro-actively leaving the group
+2026-01-11 18:29:54.796 [32mINFO [m [kafka-1] [36mo.a.k.c.m.Metrics[m : Metrics scheduler closed
+2026-01-11 18:29:54.796 [32mINFO [m [kafka-1] [36mo.a.k.c.m.Metrics[m : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-01-11 18:29:54.797 [32mINFO [m [kafka-1] [36mo.a.k.c.m.Metrics[m : Metrics reporters closed
+2026-01-11 18:29:54.802 [32mINFO [m [kafka-1] [36mo.a.k.c.u.AppInfoParser[m : App info kafka.consumer for consumer-payment-middleware-group-1 unregistered
+2026-01-11 18:29:54.807 [32mINFO [m [RMI TCP Connection(10)-127.0.0.1] [36mo.a.c.h.Http11NioProtocol[m : Stopping ProtocolHandler ["http-nio-8081"]
