@@ -38,4 +38,13 @@ public class RegisterTransactionResponse {
     return Objects.equals(transactionId, other.transactionId);
   }
 
+  @Override
+  public String toString() {
+    StringBuilder builder = new StringBuilder();
+    builder.append("RegisterTransactionResponse [transactionId=");
+    builder.append(transactionId);
+    builder.append("]");
+    return builder.toString();
+  }
+
 }

@@ -94,4 +94,12 @@ public class Transaction {
     return Objects.equals(transactionId, other.transactionId);
   }
 
+  @Override
+  public String toString() {
+    return new StringBuilder().append("Transaction [idempotencyId=").append(idempotencyId).append(", transactionId=")
+        .append(transactionId).append(", empoyeeId=").append(empoyeeId).append(", paymentDestination=")
+        .append(paymentDestination).append(", amount=").append(amount).append(", status=").append(status).append("]")
+        .toString();
+  }
+
 }

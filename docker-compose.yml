@@ -1,28 +1,40 @@
 services:
-  # Kafka without Zookeeper (KRaft mode)
   kafka:
     image: apache/kafka:latest
     container_name: kafka
+    networks:
+      - payment-net
     environment:
       KAFKA_NODE_ID: 1
       KAFKA_PROCESS_ROLES: broker,controller
-      KAFKA_LISTENERS: PLAINTEXT://:9092,CONTROLLER://:9093
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
-      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@localhost:9093
+      # Define two listeners: one for the broker to talk to itself, one for your Spring app
+      KAFKA_LISTENERS: PLAINTEXT://:9092,DOCKER://:9093,CONTROLLER://:9094
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092,DOCKER://kafka:9093
       KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,DOCKER:PLAINTEXT
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@kafka:9094
+      # CRITICAL for single-node:
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
     ports:
       - "9092:9092"
-    mem_limit: 512m
 
   kafka-ui:
     image: provectuslabs/kafka-ui:latest
     container_name: kafka-ui
+    networks:
+      - payment-net
     ports:
       - "8080:8080"
     environment:
+      # Tell UI to connect using the DOCKER listener name and port
       KAFKA_CLUSTERS_0_NAME: local
-      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:9092
-    mem_limit: 256m
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:9093
+      DYNAMIC_CONFIG_ENABLED: 'true'
+    depends_on:
+      - kafka
 
   # HashiCorp Vault in Dev Mode
   vault:
@@ -36,3 +48,7 @@ services:
     cap_add:
       - IPC_LOCK
     mem_limit: 256m
+
+networks:
+  payment-net:
+    driver: bridge

@@ -2,8 +2,7 @@ package com.mif.interview.yapily.exception;
 
 public class UnknownMerchantException extends RuntimeException {
 
-  private static final long serialVersionUID = 1L;
-
+  private static final long serialVersionUID = -3481627069355500943L;
   private Integer merchantId;
 
   public UnknownMerchantException(Integer merchantId) {
@@ -12,6 +11,7 @@ public class UnknownMerchantException extends RuntimeException {
 
   @Override
   public String getMessage() {
-    return "No merchant with " + merchantId + " identifier has been found!";
+    return new StringBuilder().append("No merchant with ").append(merchantId).append(" identifier has been found!")
+        .toString();
   }
 }

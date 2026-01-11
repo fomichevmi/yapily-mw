@@ -1,39 +1,48 @@
 package com.mif.interview.yapily.service;
 
-import org.apache.kafka.clients.consumer.ConsumerRecord;
-import org.springframework.beans.factory.annotation.Qualifier;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
+import com.mif.interview.yapily.exception.TransactionQueueingException;
 import com.mif.interview.yapily.model.Transaction;
+import com.mif.interview.yapily.model.TransactionStatus;
+import com.mif.interview.yapily.storage.TransactionStorage;
+
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotBlank;
 
 @Service
 public class TransactionQueueManager {
 
-  @Qualifier("kafkaTemplate")
+  private static final Logger logger = LogManager.getLogger(TransactionQueueManager.class);
+
+  @Autowired
   KafkaTemplate<String, Transaction> kafkaTemplate;
 
-  public void sendPayment(String idempotencyKey, Transaction request) {
+  @Autowired
+  TransactionStorage transactionStorage;
+
+  public void sendPayment(@NotBlank String idempotencyKey, @Valid Transaction request) {
     // We use the idempotencyKey as the Kafka Message Key.
     // This ensures all retries for the same payment go to the same partition.
+    logger.debug("Sending transaction {} to the queue", request);
     kafkaTemplate.send("payments-topic", idempotencyKey, request).whenComplete((result, ex) -> {
       if (ex == null) {
-        System.out.println("Sent message=[" + request + "] with offset=[" + result.getRecordMetadata().offset() + "]");
+        transactionStorage.updateTransactionStatus(request.getTransactionId(), TransactionStatus.IN_QUEUE);
+        logger.debug("Sent message=[{}] with offset=[{}]", request, result.getRecordMetadata().offset());
       } else {
-        System.err.println("Unable to send message=[" + request + "] due to : " + ex.getMessage());
+        transactionStorage.updateTransactionStatus(request.getTransactionId(), TransactionStatus.REJECTED);
+        throw new TransactionQueueingException(ex);
       }
     });
   }
 
-  @KafkaListener(topics = "payments-topic")
-  public void consume(ConsumerRecord<String, Transaction> record) {
-      String key = record.key();
-      Transaction payload = record.value();
-      
-      // LOGIC: Call Yapily API here.
-      // If this thread blocks (waiting for Yapily), it's a Virtual Thread, 
-      // so it doesn't consume heavy system resources!
-      System.out.printf("Processing payment for key: %s, amount: %s%n", key, payload.getAmount());
+  @KafkaListener(topics = "payments-topic", groupId = "payment-middleware-group")
+  public void consume(Transaction transaction) {
+    logger.debug("Processing payment for key: {}, amount: {}", transaction.getTransactionId(), transaction.getAmount());
   }
 }

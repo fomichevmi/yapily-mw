@@ -12,9 +12,9 @@ import org.springframework.kafka.config.TopicBuilder;
 import org.springframework.kafka.core.DefaultKafkaProducerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.core.ProducerFactory;
-
-import com.fasterxml.jackson.databind.JsonSerializer;
-import com.fasterxml.jackson.databind.ser.std.StringSerializer;
+import org.springframework.kafka.support.serializer.JsonSerializer;
+import org.apache.kafka.common.serialization.StringSerializer;
+import com.mif.interview.yapily.model.Transaction;
 
 @Configuration
 public class KafkaProducerConfig {
@@ -28,21 +28,20 @@ public class KafkaProducerConfig {
   }
 
   @Bean
-  ProducerFactory<String, Object> producerFactory() {
+  ProducerFactory<String, Transaction> producerFactory() {
     Map<String, Object> configProps = new HashMap<>();
     configProps.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
-    configProps.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
-    configProps.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JsonSerializer.class);
 
-    // Fintech Safety: Enable Idempotence to prevent duplicate messages on retries
+    // Fintech Safety: Idempotence and ACKS
     configProps.put(ProducerConfig.ENABLE_IDEMPOTENCE_CONFIG, true);
     configProps.put(ProducerConfig.ACKS_CONFIG, "all");
 
-    return new DefaultKafkaProducerFactory<>(configProps);
+    // Use the constructor approach to avoid InstantiationException
+    return new DefaultKafkaProducerFactory<>(configProps, new StringSerializer(), new JsonSerializer<>());
   }
 
   @Bean
-  KafkaTemplate<String, Object> kafkaTemplate() {
+  KafkaTemplate<String, Transaction> kafkaTemplate() {
     return new KafkaTemplate<>(producerFactory());
   }
 }

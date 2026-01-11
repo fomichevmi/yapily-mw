@@ -62,5 +62,18 @@ public class RegisterTransactionRequest {
         && Objects.equals(empoyeeId, other.empoyeeId) && Objects.equals(paymentDestination, other.paymentDestination);
   }
 
+  @Override
+  public String toString() {
+    StringBuilder builder = new StringBuilder();
+    builder.append("RegisterTransactionRequest [empoyeeId=");
+    builder.append(empoyeeId);
+    builder.append(", paymentDestination=");
+    builder.append(paymentDestination);
+    builder.append(", amount=");
+    builder.append(amount);
+    builder.append("]");
+    return builder.toString();
+  }
+
   
 }
