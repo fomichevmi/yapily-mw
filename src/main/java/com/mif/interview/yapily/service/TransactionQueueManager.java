@@ -36,6 +36,9 @@ public class TransactionQueueManager {
   @Autowired
   BusinessLogicService businessLogicService;
 
+  @Autowired
+  MetricsEmmiterService metricsService;
+
   @PostConstruct
   public void init() {
     for (int i = 0; i < 500; i++) {
@@ -51,9 +54,11 @@ public class TransactionQueueManager {
       kafkaTemplate.send("payments-topic", idempotencyKey, request).whenComplete((result, ex) -> {
         if (ex == null) {
           transactionStorage.updateTransactionStatus(request.getTransactionId(), TransactionStatus.IN_QUEUE);
+          metricsService.emitPutToTheQueue();
           logger.debug("Sent message=[{}] with offset=[{}]", request, result.getRecordMetadata().offset());
         } else {
           transactionStorage.updateTransactionStatus(request.getTransactionId(), TransactionStatus.REJECTED);
+          metricsService.emit500Error();
           throw new TransactionQueueingException(ex);
         }
       });
@@ -64,12 +69,10 @@ public class TransactionQueueManager {
 
   @KafkaListener(topics = "payments-topic", groupId = "payment-middleware-group")
   public void consume(Transaction transaction) {
+    metricsService.recordQuetime();
     logger.debug("Processing payment for key: {}, amount: {}", transaction.getTransactionId(), transaction.getAmount());
-    try {
-      businessLogicService.processPayment(transaction);
-    } catch (Exception e) {
-      // Reject transaction
-    }
+    businessLogicService.processPayment(transaction);
+    metricsService.recordProcessingTime();
   }
 
   @Scheduled(fixedRate = 10) // Refill every 10ms (100 tokens/sec)

@@ -6,11 +6,13 @@ import java.util.concurrent.ConcurrentMap;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.mif.interview.yapily.exception.DuplicateTransactoinException;
 import com.mif.interview.yapily.model.Transaction;
 import com.mif.interview.yapily.model.TransactionStatus;
+import com.mif.interview.yapily.service.MetricsEmmiterService;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
@@ -27,6 +29,9 @@ public class TransactionStorage {
   final private ConcurrentMap<UUID, Transaction> transactionsById = new ConcurrentHashMap<>();
   final private ConcurrentMap<String, Transaction> transactionsByIdempotency = new ConcurrentHashMap<>();
 
+  @Autowired
+  MetricsEmmiterService metricsService;
+
   public Transaction createTransaction(@Valid Transaction transaction) {
     var transactionByIdempotency = transactionsByIdempotency.putIfAbsent(transaction.getIdempotencyId(), transaction);
     if (transactionByIdempotency != null) {
@@ -35,6 +40,7 @@ public class TransactionStorage {
         return transactionByIdempotency;
       } else {
         // Same idempotencyId but different content, shouldn't happen
+        metricsService.emitDuplicated();
         transaction.setStatus(TransactionStatus.DUPLICATE);
         transactionsById.putIfAbsent(transaction.getTransactionId(), transaction);
         logger.error("Idempotation {} has already been assigned to a different transaction {}, rejecting: {}",
@@ -56,7 +62,7 @@ public class TransactionStorage {
           transaction.setTransactionId(UUID.randomUUID());
           logger.warn("Duplicate transaction id detected: {}, trying to store new trunsaction with refreshed id: {}",
               transactionById.getTransactionId(), transaction.getTransactionId());
-        } else {
+        } else {;
           logger.debug("Transaction with id {} has been successfully saved", transaction.getTransactionId());
         }
       } while (transactionById != null);
