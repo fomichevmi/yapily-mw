@@ -32,11 +32,13 @@ public class TransactionController {
     logger.debug("Created new transaction: {}", transaction);
     transactionStorage.createTransaction(transaction);
     queueManager.sendPayment(idempotencyKey, transaction);
+    // TODO: return prepared transaction response instead of this dummy object
     return new ResponseEntity<>(new RegisterTransactionResponse(), HttpStatus.OK);
   }
 
   @PostMapping("/details")
   public ResponseEntity<TransactionDetailsResponse> details(@Valid @RequestBody TransactionDetailsRequest request) {
+    // TODO: return prepared transaction response instead of this dummy object
     return new ResponseEntity<>(new TransactionDetailsResponse(), HttpStatus.OK);
   }
 }

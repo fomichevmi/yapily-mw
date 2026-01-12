@@ -23,6 +23,9 @@ import com.mif.interview.yapily.storage.TransactionStorage;
 import jakarta.annotation.PostConstruct;
 import jakarta.validation.Valid;
 
+/**
+ * This class is complete mess. Emulates some business logic
+ */
 @Service
 public class BusinessLogicService {
 
@@ -45,6 +48,10 @@ public class BusinessLogicService {
     }
   }
 
+  /**
+   * todo: Should be split into logical parts in order to reduce the method length and complexity
+   * @param transaction
+   */
   public void processPayment(@Valid Transaction transaction) {
 
     transactionStorage.updateTransactionStatus(transaction.getTransactionId(), TransactionStatus.IN_PROCESSING);
