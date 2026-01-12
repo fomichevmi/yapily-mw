@@ -79,7 +79,7 @@ public class Transaction {
 
   @Override
   public int hashCode() {
-    return Objects.hash(transactionId);
+    return Objects.hash(amount, empoyeeId, idempotencyId, paymentDestination, status);
   }
 
   @Override
@@ -91,7 +91,9 @@ public class Transaction {
     if (getClass() != obj.getClass())
       return false;
     Transaction other = (Transaction) obj;
-    return Objects.equals(transactionId, other.transactionId);
+    return Double.doubleToLongBits(amount) == Double.doubleToLongBits(other.amount)
+        && Objects.equals(empoyeeId, other.empoyeeId) && Objects.equals(idempotencyId, other.idempotencyId)
+        && Objects.equals(paymentDestination, other.paymentDestination) && status == other.status;
   }
 
   @Override

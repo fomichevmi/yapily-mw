@@ -30,11 +30,17 @@ public class TransactionStorage {
   public Transaction createTransaction(@Valid Transaction transaction) {
     var transactionByIdempotency = transactionsByIdempotency.putIfAbsent(transaction.getIdempotencyId(), transaction);
     if (transactionByIdempotency != null) {
-      transaction.setStatus(TransactionStatus.DUPLICATE);
-      transactionsById.putIfAbsent(transaction.getTransactionId(), transaction);
-      logger.error("Idempotation {} has already been assigned to a different transaction {}, rejecting: {}",
-          transaction.getIdempotencyId(), transactionByIdempotency.getTransactionId(), transaction);
-      throw new DuplicateTransactoinException(transactionByIdempotency.getStatus());
+      if (transactionByIdempotency.equals(transaction)) {
+        // Same transaction created twice
+        return transactionByIdempotency;
+      } else {
+        // Same idempotencyId but different content, shouldn't happen
+        transaction.setStatus(TransactionStatus.DUPLICATE);
+        transactionsById.putIfAbsent(transaction.getTransactionId(), transaction);
+        logger.error("Idempotation {} has already been assigned to a different transaction {}, rejecting: {}",
+            transaction.getIdempotencyId(), transactionByIdempotency.getTransactionId(), transaction);
+        throw new DuplicateTransactoinException(transactionByIdempotency.getStatus());
+      }
     } else {
       Transaction transactionById = null;
       do {
