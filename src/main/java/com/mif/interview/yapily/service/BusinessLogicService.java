@@ -33,9 +33,10 @@ public class BusinessLogicService {
   TransactionStorage transactionStorage;
   @Autowired
   InstitudionStorage institudionStorage;
-
   @Autowired
   YapilyHttpService yapilyHttpService;
+  @Autowired
+  MetricsEmmiterService metricsService;
 
   @PostConstruct
   public void init() {
@@ -73,10 +74,24 @@ public class BusinessLogicService {
 
       logger.debug("Prepared request for creating payment authorization: {}", paymentAuthorizationRequest);
       var response = yapilyHttpService.getPaymentAuthorization(paymentAuthorizationRequest);
+      if (response == null) {
+        transactionStorage.updateTransactionStatus(transaction.getTransactionId(),
+            TransactionStatus.FAILED_PERMANENTLY);
+        logger.error("No authorization for payment request created. Aborting");
+        metricsService.emitRejected();
+        return;
+      }
       logger.debug("Received consent id");
       var consentToken = yapilyHttpService.getConsentToken(response.getData().getInstitutionConsentId()).getData()
           .getConsentToken();
-      logger.debug("Received consent token");
+      if (consentToken == null) {
+        transactionStorage.updateTransactionStatus(transaction.getTransactionId(),
+            TransactionStatus.FAILED_PERMANENTLY);
+        logger.error("No consent token for the payment request created. Aborting");
+        metricsService.emitRejected();
+        return;
+      }
+     logger.debug("Received consent token");
 
       var createPaymentRequest = new YapilyCreatePaymentRequest();
       createPaymentRequest.setPaymentIdempotencyId(transaction.getIdempotencyId());

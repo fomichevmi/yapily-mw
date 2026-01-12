@@ -33,4 +33,8 @@ public class MetricsEmmiterService {
 
   public void recordProcessingTime() {
   }
+
+  public void emitYapilyApiCallError() {
+
+  }
 }
