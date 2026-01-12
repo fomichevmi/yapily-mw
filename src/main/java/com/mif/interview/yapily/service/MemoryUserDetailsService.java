@@ -10,6 +10,11 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+/**
+ * In the real world, there should be some database-backed user storage.
+ * For demo purposes, replacing it with simple hard-coded users just to
+ * show spring security functionality
+ */
 @Service
 public class MemoryUserDetailsService implements UserDetailsService {
 
