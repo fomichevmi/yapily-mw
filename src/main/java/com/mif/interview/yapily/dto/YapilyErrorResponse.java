@@ -8,7 +8,6 @@ public class YapilyErrorResponse {
   }
 
   public YapilyErrorResponse(YapilyApiError error) {
-    super();
     this.error = error;
   }
 
